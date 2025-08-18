@@ -80,7 +80,7 @@ const copyCode = async () => {
 html.dark .demo-preview .shiki,
 html.dark .demo-preview .shiki span {
   color: var(--shiki-dark) !important;
-  background-color: var(--shiki-dark-bg) !important;
+  background: var(--shiki-dark-bg) !important;
   /* 可选，如果你还希望同步字体样式 */
   font-style: var(--shiki-dark-font-style) !important;
   font-weight: var(--shiki-dark-font-weight) !important;
@@ -88,22 +88,20 @@ html.dark .demo-preview .shiki span {
 }
 
 .demo-preview {
-  border: 1px solid #ddd;
+  border: 1px solid var(--vp-code-copy-code-border-color);
   border-radius: 4px;
   overflow: hidden;
 }
 
 .demo-render {
   padding: 6px;
-  border-bottom: 1px solid #ddd;
 }
 
 .demo-actions {
   display: flex;
   justify-content: flex-end;
   padding: 8px;
-  border-bottom: 1px solid #ddd;
-  background-color: var(--vp-code-block-bg);
+  background: var(--vp-code-block-bg);
 }
 
 .action-button {
@@ -111,24 +109,24 @@ html.dark .demo-preview .shiki span {
   padding: 4px 12px;
   font-size: 12px;
   border-radius: 4px;
-  border: 1px solid #ddd;
-  background-color: white;
+  background: var(--vp-code-copy-code-bg);
   cursor: pointer;
   transition: all 0.3s;
+  color: var(--vp-code-copy-code-active-text);
 }
 
 .action-button:hover {
-  background-color: #f5f5f5;
+  background: var(--vp-code-copy-code-hover-bg);
 }
 
 .copy-button.success {
-  background-color: #42b983;
+  background: var(--vp-button-brand-bg);
   color: white;
-  border-color: #42b983;
+  border-color: var(--vp-button-brand-bg);
 }
 
 .copy-button.error {
-  background-color: #e74c3c;
+  background: #e74c3c;
   color: white;
   border-color: #e74c3c;
 }
@@ -155,20 +153,5 @@ html.dark .demo-preview .shiki span {
 .slide-leave-to {
   max-height: 0;
   opacity: 0;
-}
-
-html.dark .demo-actions {
-  background-color: var(--vp-code-block-bg);
-  border-color: #333;
-}
-
-html.dark .action-button {
-  background-color: #2f2f2f;
-  border-color: #555;
-  color: #fff;
-}
-
-html.dark .action-button:hover {
-  background-color: #3a3a3a;
 }
 </style>
