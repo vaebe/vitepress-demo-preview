@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "types": ["vite/client"]
+  },
+  "include": [
+    "docs/.vitepress/**/*.ts",
+    "docs/.vitepress/**/*.vue",
+    "docs/**/*.ts",
+    "docs/**/*.vue"
+  ],
+  "vueCompilerOptions": {
+    "plugins": ["@vue/language-plugin-pug"],
+    "globalTypesPath": "node_modules/.vite/declarations.d.ts"
+  },
+  "exclude": ["node_modules"]
+}
