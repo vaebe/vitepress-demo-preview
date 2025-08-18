@@ -9,7 +9,7 @@ export { data }
 export default defineLoader({
   watch: '../demos/*.vue',
   async load(files) {
-    const data = {}
+    const data:Data = {}
     for (const file of files) {
       const fileName = path.basename(file)
       const content = fs.readFileSync(file, 'utf-8')

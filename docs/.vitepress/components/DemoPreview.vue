@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, defineAsyncComponent, Component } from 'vue'
-import { data as demosData } from '../datas/demos.data'
+import { data, data as demosData } from '../datas/demos.data'
 import { defineClientComponent } from 'vitepress'
 import { codeToHtml } from 'shiki'
 
@@ -16,13 +16,12 @@ const Demo = isClient
   ? defineClientComponent(loader)
   : defineAsyncComponent(loader)
 
-
 const codeHtml = ref('')
 codeToHtml(sourceCode, {
   lang: 'vue',
   themes: {
-    light: 'github-light',
-    dark: 'github-dark',
+    light: 'vitesse-light',
+    dark: 'vitesse-dark',
   }
 }).then((res: string) => {
   codeHtml.value = res
