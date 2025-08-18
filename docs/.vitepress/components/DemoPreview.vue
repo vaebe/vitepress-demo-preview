@@ -94,7 +94,7 @@ html.dark .demo-preview .shiki span {
 }
 
 .demo-render {
-  padding: 6px;
+  padding: 8px;
 }
 
 .demo-actions {
@@ -132,7 +132,8 @@ html.dark .demo-preview .shiki span {
 }
 
 .demo-source {
-  font-size: 14px;
+  font-size: var(--vp-code-font-size);
+  line-height: var(--vp-code-line-height);
   overflow: scroll;
 }
 
