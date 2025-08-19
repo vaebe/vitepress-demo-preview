@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref, defineAsyncComponent, Component } from 'vue'
-import { data, data as demosData } from '../datas/demos.data'
+import { data as demosData } from '../datas/demos.data'
 import { defineClientComponent } from 'vitepress'
-import { codeToHtml } from 'shiki'
 
 const { src, isClient = false } = defineProps<{ src: string, isClient?: Boolean }>()
 
@@ -12,20 +11,7 @@ const sourceCode = demosData[src] || ''
 
 const loader = componentModules[`../demos/${src}`] as () => Promise<{ default: Component }>
 
-const Demo = isClient
-  ? defineClientComponent(loader)
-  : defineAsyncComponent(loader)
-
-const codeHtml = ref('')
-codeToHtml(sourceCode, {
-  lang: 'vue',
-  themes: {
-    light: 'vitesse-light',
-    dark: 'vitesse-dark',
-  }
-}).then((res: string) => {
-  codeHtml.value = res
-})
+const Demo = isClient ? defineClientComponent(loader) : defineAsyncComponent(loader)
 
 // 展开/收起功能
 const isExpanded = ref(false)
@@ -34,7 +20,7 @@ const toggleExpand = () => {
 }
 
 // 复制功能
-const copyStatus = ref('') // '' | 'success' | 'error'
+const copyStatus = ref('')
 const copyCode = async () => {
   try {
     await navigator.clipboard.writeText(sourceCode)
@@ -70,7 +56,7 @@ const copyCode = async () => {
 
     <transition name="slide">
       <div class="demo-source">
-        <div v-show="isExpanded" v-html="codeHtml"></div>
+        <div v-show="isExpanded" v-html="sourceCode"></div>
       </div>
     </transition>
   </div>

@@ -11,12 +11,6 @@ importers:
       '@opentiny/fluent-editor':
         specifier: ^3.25.4
         version: 3.25.4
-      shiki:
-        specifier: ^3.9.2
-        version: 3.9.2
-      vite:
-        specifier: ^7.1.2
-        version: 7.1.2(@types/node@24.3.0)
       vue:
         specifier: ^3.5.18
         version: 3.5.18
@@ -24,6 +18,12 @@ importers:
       '@types/node':
         specifier: ^24.3.0
         version: 24.3.0
+      shiki:
+        specifier: ^3.9.2
+        version: 3.9.2
+      vite:
+        specifier: ^7.1.2
+        version: 7.1.2(@types/node@24.3.0)
       vitepress:
         specifier: 2.0.0-alpha.11
         version: 2.0.0-alpha.11(@types/node@24.3.0)(postcss@8.5.6)
