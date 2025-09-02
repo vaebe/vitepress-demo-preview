@@ -4,6 +4,6 @@
 
 <DemoPreview src="client-demo.vue" :isClient="true" />
 
-## 默认使用服务端渲染
+## 默认渲染
 
 <DemoPreview src="component-b.vue" />
