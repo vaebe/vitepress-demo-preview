@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default async () => {
   const mode = process.env.NODE_ENV
-  const basePath = '/'
+  const basePath = mode === 'production' ? '/vitepress-demo-preview/' : '/'
 
   return defineConfig({
     base: basePath,
